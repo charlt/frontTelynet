@@ -1,0 +1,72 @@
+<h2 mat-dialog-title *ngIf="data.add">Registro de Usuario</h2>
+<h2 mat-dialog-title *ngIf="!data.add">Actualización de Usuario</h2>
+<form [formGroup]="myForm" (ngSubmit)="enviarInformacion()">
+
+    <mat-dialog-content class="mat-typography">
+        <mat-form-field appearance="fill">
+            <mat-label>Código</mat-label>
+            <input formControlName="codigo" matInput>
+            <span class="invalidText" *ngIf="f.codigo.invalid && f.codigo.touched">
+                Registre un código
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="nombre" matInput>
+            <span class="invalidText" *ngIf="f.nombre.invalid && f.nombre.touched">
+                Registre un nombre
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Población</mat-label>
+            <input formControlName="poblacion" matInput>
+            <span class="invalidText" *ngIf="f.poblacion.invalid && f.poblacion.touched">
+                Registre una población
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Código Postal</mat-label>
+            <input formControlName="cp" matInput>
+            <span class="invalidText" *ngIf="f.cp.invalid && f.cp.touched">
+                Registre un código postal
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ciudad</mat-label>
+            <input formControlName="ciudad" matInput>
+            <span class="invalidText" *ngIf="f.ciudad.invalid && f.ciudad.touched">
+                Registre una ciudad
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input formControlName="telefono" matInput>
+            <span class="invalidText" *ngIf="f.telefono.invalid && f.telefono.touched">
+                Registre un teléfono
+            </span>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Direccion</mat-label>
+            <input formControlName="direccion" matInput>
+            <span class="invalidText" *ngIf="f.direccion.invalid && f.direccion.touched">
+                Registre una dirección
+            </span>
+        </mat-form-field><br>
+
+
+        <div>
+
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button type="submit" color="primary" [disabled]="myForm.invalid" cdkFocusInitial>Guardar</button>
+
+        <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+</form>
